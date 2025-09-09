@@ -35,7 +35,7 @@ export default function AboutMe() {
                     </div>
                     <a
                         href="#projects-section"
-                        className="btn-primary flex items-center gap-2 w-full justify-center"
+                        className="btn-primary flex items-center gap-2 w-full justify-center md:mt-0 mt-6"
                     >
                         Ver Proyectos <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </a>

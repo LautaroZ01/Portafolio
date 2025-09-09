@@ -89,17 +89,17 @@ export default function ContatMe() {
                             ></textarea>
                         </div>
 
-                        <div className="w-full flex justify-start mt-6">
+                        <div className="w-full flex md:justify-end mt-6">
                             <input
                                 type="submit"
-                                className="bg-primary-100 cursor-pointer border shadow-lg border-transparent rounded-lg hover:bg-transparent hover:border-primary-100 transition-all duration-pro px-10 py-2"
+                                className="bg-primary-100 cursor-pointer border shadow-lg border-transparent rounded-lg hover:bg-transparent hover:border-primary-100 transition-all duration-pro px-10 py-2 w-full md:w-auto"
                             />
                         </div>
                     </form>
                 </div>
-                <div className="col-start-5 flex flex-col p-6">
-                    <div className="p-2">
-                        <h3 className="bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent font-bold text-xl">Informacion de contacto</h3>
+                <div className="col-start-5 flex flex-col md:p-6 p-2">
+                    <div className="md:p-2">
+                        <h3 className="bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent font-bold text-xl text-center md:text-left">Informacion de contacto</h3>
                         <div className="mt-2 py-4 flex flex-col w-full">
                             {contactInfo.map((info, index) => (
                                 <button
@@ -124,9 +124,9 @@ export default function ContatMe() {
                             ))}
                         </div>
                     </div>
-                    <div className="p-2">
-                        <h3 className="bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent font-bold text-xl">Redes sociales</h3>
-                        <div className="mt-2 p-4 flex gap-4 basis-36">
+                    <div className="md:p-2">
+                        <h3 className="bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent font-bold text-xl text-center md:text-left">Redes sociales</h3>
+                        <div className="mt-2 p-4 flex justify-center md:justify-start gap-4 basis-36">
                             {socialMedials.map(social => (
                                 <a
                                     key={social.id}

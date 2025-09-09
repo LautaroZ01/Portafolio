@@ -61,7 +61,7 @@ export default function SkillsCarousel() {
                     {skills.map((skill, index) => (
                         <div 
                             key={`${skill.id}-${index}`}
-                            className="flex items-center justify-center gap-2 min-w-[100px] rounded-md p-2 hover:bg-bg-200 hover:text-text-100 transition-all duration-pro"
+                            className="flex items-center justify-center gap-2 rounded-md p-2 hover:bg-bg-200 hover:text-text-100 transition-all duration-pro"
                         >
                             <div className={`text-3xl ${skill.color}`}>
                                 <WebIcons name={skill.name} />

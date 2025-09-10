@@ -16,7 +16,7 @@ export default function Portfolio() {
                             <div className="overflow-hidden bg-gradient-to-br from-primary-100 to-black rounded-lg">
 
                                 <img
-                                    src={project.imageUrl}
+                                    src={project.thumbnail}
                                     alt={project.title}
                                     className="bg-bg-100 object-top translate-6 object-cover aspect-video shadow-lg rounded-md shadow-bg-100 hover:translate-none transition-transform duration-pro"
                                 />

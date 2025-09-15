@@ -22,15 +22,15 @@ export const projects: Project[] = [
         demoUrl: 'https://up-task-front-end.vercel.app',
         thumbnail: "/Projects/UpTask/home.webp",
         gallery: [
-            '/public/Projects/UpTask/login.webp',
-            '/public/Projects/UpTask/register.webp',
-            '/public/Projects/UpTask/change-password.webp',
-            '/public/Projects/UpTask/profile.webp',
-            '/public/Projects/UpTask/home.webp',
-            '/public/Projects/UpTask/create-project.webp',
-            '/public/Projects/UpTask/tasks.webp',
-            '/public/Projects/UpTask/task.webp',
-            '/public/Projects/UpTask/team.webp',
+            '/Projects/UpTask/login.webp',
+            '/Projects/UpTask/register.webp',
+            '/Projects/UpTask/change-password.webp',
+            '/Projects/UpTask/profile.webp',
+            '/Projects/UpTask/home.webp',
+            '/Projects/UpTask/create-project.webp',
+            '/Projects/UpTask/tasks.webp',
+            '/Projects/UpTask/task.webp',
+            '/Projects/UpTask/team.webp',
         ],
         objetives: [
             'Aprender a utlizar el MERN Stack',
@@ -52,15 +52,81 @@ export const projects: Project[] = [
         id: 2,
         title: "Blog",
         status: "En desarrollo",
-        thumbnail: "/Projects/Blog/home.webp",
         technologies: ['React', 'TypeScript', 'TailwindCSS', 'React Router', 'React Query', 'Zod', 'Node.js', 'MongoDB', 'Express.js'],
+        description: 'Una aplicacion web desarrollada como proyecto final de mi carrera universitaria. Destinada a la publicacion de articulos y la gestion de los mismos. Donde los usuarios que registrados podran interactuar con los articulos publicados, dejando su comentaria y reaccionando. Tambien cuenta con un chat en tiempo real donde los usuarios pueden interactuar con los diferentes escritores',
+        type: 'Full Stack',
+        githubUrl: [
+            {
+                url: "https://github.com/LautaroZ01/Blog-Client",
+                type: "Frontend"
+            },
+            {
+                url: "https://github.com/LautaroZ01/Blog-Server",
+                type: "Backend"
+            }
+        ],
+        thumbnail: "/Projects/Blog/home.webp",
+        gallery: [
+            '/Projects/Blog/login.webp',
+            '/Projects/Blog/register.webp',
+            '/Projects/Blog/home.webp',
+            '/Projects/Blog/post.webp',
+            '/Projects/Blog/comment.webp',
+            '/Projects/Blog/chat.webp',
+            '/Projects/Blog/profile.webp',
+            '/Projects/Blog/dashboard-post.webp',
+            '/Projects/Blog/create-post.webp',
+            '/Projects/Blog/modal-user.webp'
+        ],
+        objetives: [
+            'Aplicar todos mis conocimientos obtenidos en los diferentes cursos',
+            'Implementar una RESTAPI completa',
+            'Manejo de CRUDs completos',
+            'Manejo de errores y validaciones con Zod',
+            'Aprender el protocolo WebSocket para la creacion de un chat en tiempo real'
+        ],
+        features: [
+            'Autenticación con JWT, Google y Facebook',
+            'Gestión de articulos, categorias, etiquetas y comentarios',
+            'Gestión de usuario',
+            'Chat en tiempo real',
+            'Validacion de datos en los formularios',
+            'Envio de emails',
+            'Generacion de PDF/Exel',
+            'Manejo de roles y permisos'
+        ],
     },
     {
         id: 3,
         title: "Recetario",
         status: "En desarrollo",
-        thumbnail: "/Projects/Recetas/home.webp",
         technologies: ['React', 'TypeScript', 'TailwindCSS', 'Zustand'],
+        githubUrl: [
+            {
+                url: "https://github.com/LautaroZ01/bebidas-react-typescript",
+                type: "Frontend"
+            }
+        ],
+        demoUrl: 'https://bebidas-react-typescript-indol.vercel.app',
+        thumbnail: "/Projects/Recetas/home.webp",
+        gallery: [
+            '/public/Projects/Recetas/list.webp',
+            '/public/Projects/Recetas/home.webp',
+            '/public/Projects/Recetas/modal.webp',
+            '/public/Projects/Recetas/favorite.webp'
+        ],
+        objetives: [
+            'Afianzar mis conocimiento en React con TypeScript',
+            'Aprender el uso de estados globales mediante Zustand',
+            'Aprender a consumir una API externa'
+        ],
+        features: [
+            'Consumo de una API externa',
+            'Gestión de estados globales',
+            'Validacion de datos en los formularios',
+            'Implementacion de un modal',
+            'Implementacion de un sistema de favoritos'
+        ],
     }
 ]
 

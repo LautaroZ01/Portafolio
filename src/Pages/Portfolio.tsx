@@ -14,12 +14,13 @@ export default function Portfolio() {
                     <article key={project.id} className="my-4 ">
                         <div className="py-20 px-10 rounded-lg bg-radial-[ellipse_at_center] from-black to-bg-100/80">
                             <div className="overflow-hidden bg-gradient-to-br from-primary-100 to-black rounded-lg">
-
-                                <img
-                                    src={project.thumbnail}
-                                    alt={project.title}
-                                    className="bg-bg-100 object-top translate-6 object-cover aspect-video shadow-lg rounded-md shadow-bg-100 hover:translate-none transition-transform duration-pro"
-                                />
+                                <Link to={`/project/${project.id}`}>
+                                    <img
+                                        src={project.thumbnail}
+                                        alt={project.title}
+                                        className="bg-bg-100 object-top translate-6 object-cover aspect-video shadow-lg rounded-md shadow-bg-100 hover:translate-none transition-transform duration-pro"
+                                    />
+                                </Link>
                             </div>
                         </div>
                         <div className="gap-4 my-4 flex flex-col items-start justify-start">

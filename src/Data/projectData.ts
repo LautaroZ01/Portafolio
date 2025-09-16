@@ -101,6 +101,8 @@ export const projects: Project[] = [
         title: "Recetario",
         status: "En desarrollo",
         technologies: ['React', 'TypeScript', 'TailwindCSS', 'Zustand'],
+        description: 'Pagina web que permite a los usuarios buscar recetas y guardarlas en favoritos. Fue desarrollada para aprender el uso de estados globales mediante Zustand y el consumo de una API externa',
+        type: 'Frontend',
         githubUrl: [
             {
                 url: "https://github.com/LautaroZ01/bebidas-react-typescript",
@@ -110,10 +112,10 @@ export const projects: Project[] = [
         demoUrl: 'https://bebidas-react-typescript-indol.vercel.app',
         thumbnail: "/Projects/Recetas/home.webp",
         gallery: [
-            '/public/Projects/Recetas/list.webp',
-            '/public/Projects/Recetas/home.webp',
-            '/public/Projects/Recetas/modal.webp',
-            '/public/Projects/Recetas/favorite.webp'
+            '/Projects/Recetas/list.webp',
+            '/Projects/Recetas/home.webp',
+            '/Projects/Recetas/modal.webp',
+            '/Projects/Recetas/favorite.webp'
         ],
         objetives: [
             'Afianzar mis conocimiento en React con TypeScript',
@@ -133,51 +135,51 @@ export const projects: Project[] = [
 export const techs: Techs[] = [
     {
         name: 'Node.js',
-        iconPatch: '/public/icons/nodejs.svg'
+        iconPatch: '/icons/nodejs.svg'
     },
     {
         name: 'MongoDB',
-        iconPatch: '/public/icons/mongodb.svg'
+        iconPatch: '/icons/mongodb.svg'
     },
     {
         name: 'Express.js',
-        iconPatch: '/public/icons/expressjs_dark.svg'
+        iconPatch: '/icons/expressjs_dark.svg'
     },
     {
         name: 'TailwindCSS',
-        iconPatch: '/public/icons/tailwindcss.svg'
+        iconPatch: '/icons/tailwindcss.svg'
     },
     {
         name: 'TypeScript',
-        iconPatch: '/public/icons/typescript.svg'
+        iconPatch: '/icons/typescript.svg'
     },
     {
         name: 'JavaScript',
-        iconPatch: '/public/icons/javascript.svg'
+        iconPatch: '/icons/javascript.svg'
     },
     {
         name: 'React',
-        iconPatch: '/public/icons/react.svg'
+        iconPatch: '/icons/react_dark.svg'
     },
     {
         name: 'HTML',
-        iconPatch: '/public/icons/html5.svg'
+        iconPatch: '/icons/html5.svg'
     },
     {
         name: 'CSS',
-        iconPatch: '/public/icons/css.svg'
+        iconPatch: '/icons/css.svg'
     },
     {
         name: 'React Router',
-        iconPatch: '/public/icons/reactrouter.svg'
+        iconPatch: '/icons/reactrouter.svg'
     },
     {
         name: 'React Query',
-        iconPatch: '/public/icons/reactquery.svg'
+        iconPatch: '/icons/reactquery.svg'
     },
     {
         name: 'Zod',
-        iconPatch: '/public/icons/zod.svg'
+        iconPatch: '/icons/zod.svg'
     }
 ]
 

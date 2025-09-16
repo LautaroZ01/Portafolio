@@ -17,13 +17,13 @@ export interface Project {
     id: number
     title: string
     status: ProjectStatus
-    technologies?: Techs['name'][]
-    description?: string
-    type?: ProjectType
-    githubUrl?: Repository[]
+    technologies: Techs['name'][]
+    description: string
+    type: ProjectType
+    githubUrl: Repository[]
     demoUrl?: string
     thumbnail: string
-    gallery?: string[]
-    features?: string[]
-    objetives?: string[]
+    gallery: string[]
+    features: string[]
+    objetives: string[]
 }

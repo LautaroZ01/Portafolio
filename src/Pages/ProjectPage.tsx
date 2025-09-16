@@ -34,7 +34,7 @@ export default function ProjectPage() {
       </header>
       <GalleryCarousel images={project.gallery} type={project.type} status={project.status} />
 
-      <section className="p-2 project-container bg-radial-[ellipse_at_bottom] from-bg-100 to-black to-50%">
+      <section className="p-2 project-container bg-radial-[ellipse_at_bottom] from-bg-100 to-black lg:to-50%">
 
         <div className="">
           <p className="my-6 p-2 text-balance text-center">{project.description}</p>

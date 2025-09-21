@@ -98,10 +98,10 @@ export const projects: Project[] = [
     },
     {
         id: 3,
-        title: "Recetario",
-        status: "En desarrollo",
+        title: "Recetario con IA",
+        status: "Desplegado",
         technologies: ['React', 'TypeScript', 'TailwindCSS', 'Zustand'],
-        description: 'Pagina web que permite a los usuarios buscar recetas y guardarlas en favoritos. Fue desarrollada para aprender el uso de estados globales mediante Zustand y el consumo de una API externa',
+        description: 'Pagina web que permite a los usuarios buscar recetas y guardarlas en favoritos asi como un apartando donde el usuario podra soliciotar recetas al bartender (que podra generarlas con la ayuda de IA). Fue desarrollada para aprender el uso de estados globales mediante Zustand y el consumo de APIs externas',
         type: 'Frontend',
         githubUrl: [
             {
@@ -115,19 +115,22 @@ export const projects: Project[] = [
             '/Projects/Recetas/list.webp',
             '/Projects/Recetas/home.webp',
             '/Projects/Recetas/modal.webp',
-            '/Projects/Recetas/favorite.webp'
+            '/Projects/Recetas/favorite.webp',
+            '/Projects/Recetas/ia-generating.webp'
         ],
         objetives: [
             'Afianzar mis conocimiento en React con TypeScript',
             'Aprender el uso de estados globales mediante Zustand',
-            'Aprender a consumir una API externa'
+            'Aprender a consumir una API externa',
+            'Aprender a incorporar IA a mis proyectos'
         ],
         features: [
             'Consumo de una API externa',
             'Gestión de estados globales',
             'Validacion de datos en los formularios',
             'Implementacion de un modal',
-            'Implementacion de un sistema de favoritos'
+            'Implementacion de un sistema de favoritos',
+            'Implementacion de IA con OpenRouter'
         ],
     }
 ]

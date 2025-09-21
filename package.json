@@ -12,6 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "4.4.1",
     "@tailwindcss/postcss": "4.1.7",
+    "motion": "^12.23.16",
     "postcss": "8.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",

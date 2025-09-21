@@ -147,6 +147,6 @@ export const contactInfo: ContactInfo[] = [
     },
     {
         type: 'Dirección',
-        value: 'Salta, Salta, Argentina'
+        value: 'Salta Capital, Salta, Argentina'
     }
 ];

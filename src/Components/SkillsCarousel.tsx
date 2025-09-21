@@ -1,46 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { skills } from '../Data/data';
-import WebIcons from './WebIcons';
+import { motion } from "motion/react"
+import { skills } from "../Data/data";
+import WebIcons from "./WebIcons";
 
 export default function SkillsCarousel() {
-    const carouselRef = useRef<HTMLDivElement>(null);
-    const itemsRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (!carouselRef.current || !itemsRef.current) return;
-
-        const carousel = carouselRef.current;
-        const items = itemsRef.current;
-        
-        items.innerHTML += items.innerHTML;
-
-        let animationId: number;
-        let speed = 1;
-
-        const animate = () => {
-            if (carousel.scrollLeft >= items.scrollWidth / 2) {
-                carousel.scrollLeft = 0;
-            } else {
-                carousel.scrollLeft += speed;
-            }
-            animationId = requestAnimationFrame(animate);
-        };
-
-        const handleMouseEnter = () => speed = 0;
-        const handleMouseLeave = () => speed = 1;
-
-        carousel.addEventListener('mouseenter', handleMouseEnter);
-        carousel.addEventListener('mouseleave', handleMouseLeave);
-
-        animationId = requestAnimationFrame(animate);
-
-        return () => {
-            cancelAnimationFrame(animationId);
-            carousel.removeEventListener('mouseenter', handleMouseEnter);
-            carousel.removeEventListener('mouseleave', handleMouseLeave);
-        };
-    }, []);
-
     return (
         <div className="w-full overflow-hidden py-8" id="skills-section">
             <div className="text-center mb-8">
@@ -48,28 +10,32 @@ export default function SkillsCarousel() {
                     Mis Habilidades
                 </h2>
             </div>
-            
-            <div 
-                ref={carouselRef}
-                className="w-full overflow-x-auto no-scrollbar py-4"
-                style={{ scrollbarWidth: 'none' }}
-            >
-                <div 
-                    ref={itemsRef}
-                    className="flex items-center gap-8 w-max"
+
+            <div className="overflow-hidden">
+                <motion.div
+                    className="flex gap-8 w-max p-2"
+                    animate={{ x: ["0%", "-50%"] }} // mueve la mitad del ancho duplicado
+                    transition={{
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        duration: 30, // velocidad (ajusta a gusto)
+                        ease: "linear",
+                    }}
                 >
-                    {skills.map((skill, index) => (
-                        <div 
+                    {[...skills, ...skills].map((skill, index) => (
+                        <div
                             key={`${skill.id}-${index}`}
-                            className="flex items-center justify-center gap-2 rounded-md p-2 hover:bg-bg-200 hover:text-text-100 transition-all duration-pro"
+                            className="badge-skills"
                         >
-                            <div className={`text-3xl ${skill.color}`}>
+                            <div className={`text-2xl ${skill.color}`}>
                                 <WebIcons name={skill.name} />
                             </div>
-                            <p className="text-text-200 text-sm font-medium cursor-default">{skill.name}</p>
+                            <p className="text-sm">
+                                {skill.name}
+                            </p>
                         </div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </div>
     );

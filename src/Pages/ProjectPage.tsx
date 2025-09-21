@@ -44,7 +44,7 @@ export default function ProjectPage() {
             {projectTechs.map(technology => (
               <span
                 key={technology.name}
-                className="cursor-default flex items-center gap-2 py-1.5 px-3 rounded-full text-sm hover:scale-105 hover:shadow-lg hover:shadow-primary-100/40 bg-transparent outline outline-primary-100 transition-all duration-pro"
+                className="badge-skills"
               >
                 <img
                   src={technology.iconPatch}

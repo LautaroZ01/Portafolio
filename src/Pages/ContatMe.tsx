@@ -110,7 +110,7 @@ export default function ContatMe() {
                                     onClick={() => handleCopy(info.value)}
                                 >
                                     <strong className="text-primary-100 font-bold">{info.type}</strong>
-                                    <span>{info.value}</span>
+                                    <span>{info.type === 'Dirección' ? info.value : `Click para copiar ${info.type}`}</span>
                                     {hoveredIndex === index && (
                                         <span className="absolute top-0 -right-4 p-2 rounded-full">
                                             {isHovered ? (

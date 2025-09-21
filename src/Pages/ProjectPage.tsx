@@ -4,19 +4,34 @@ import { MdOutlineArrowBackIos } from "react-icons/md"
 import { FaGithub } from "react-icons/fa"
 import { HiLink } from "react-icons/hi"
 import GalleryCarousel from "../Components/GalleryCarousel"
+import { motion } from "motion/react"
+import { useEffect } from "react"
 
 export default function ProjectPage() {
   const params = useParams()
   const projectId = params.id!
   const project = projects.find(project => project.id === Number(projectId))
 
+  useEffect(() => {
+    document.title = project?.title || "Project Page"
+    window.scrollTo(0, 0)
+  }, [project])
+
   const navigate = useNavigate()
 
   const projectTechs = techs.filter(tech => project?.technologies.includes(tech.name))
 
-  if (project) return (
-    <main className="">
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-bg-100/70 flex items-center justify-between gap-4 p-4 rounded-b-lg lg:max-w-5xl lg:mx-auto">
+  if (!project) return null
+
+  return (
+    <main>
+      {/* Header animado */}
+      <motion.header
+        initial={{ y: -60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="sticky top-0 z-50 backdrop-blur-md bg-bg-100/70 flex items-center justify-between gap-4 p-4 rounded-b-lg lg:max-w-5xl lg:mx-auto"
+      >
         <button onClick={() => navigate(-1)} className="btn-rounded-link cursor-pointer">
           <MdOutlineArrowBackIos />
         </button>
@@ -31,21 +46,43 @@ export default function ProjectPage() {
             </a>
           )}
         </div>
-      </header>
-      <GalleryCarousel images={project.gallery} type={project.type} status={project.status} />
+      </motion.header>
 
-      <section className="p-8 lg:p-12 rounded-2xl shadow-lg bg-radial from-bg-100 to-black ">
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+      >
+        <GalleryCarousel images={project.gallery} type={project.type} status={project.status} />
+      </motion.div>
+
+      {/* Contenido principal */}
+      <motion.section
+        initial={{ y: 40, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+        className="p-8 lg:p-12 rounded-2xl shadow-lg bg-radial from-bg-100 to-black"
+      >
         <div className="max-w-5xl mx-auto text-text-200">
-          <p className="my-8 text-lg leading-relaxed text-center text-text-100">
+          {/* Descripción */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="my-8 text-lg leading-relaxed text-center text-text-100"
+          >
             {project.description}
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 my-8">
+          {/* Tecnologías */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-wrap items-center justify-center gap-3 my-8"
+          >
             {projectTechs.map(technology => (
-              <span
-                key={technology.name}
-                className="badge-skills"
-              >
+              <span key={technology.name} className="badge-skills">
                 <img
                   src={technology.iconPatch}
                   alt={technology.name}
@@ -54,10 +91,21 @@ export default function ProjectPage() {
                 {technology.name}
               </span>
             ))}
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-8 my-10">
-            <div className="project-card">
+          </motion.div>
+
+          {/* Objetivos y características */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.7, staggerChildren: 0.3 }}
+            className="grid lg:grid-cols-2 gap-8 my-10"
+          >
+            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="project-card">
               <h2 className="font-bold text-xl mb-4 text-primary-200 text-center lg:text-left">
                 Objetivos
               </h2>
@@ -66,8 +114,9 @@ export default function ProjectPage() {
                   <li key={objetive}>{objetive}</li>
                 ))}
               </ul>
-            </div>
-            <div className="project-card">
+            </motion.div>
+
+            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="project-card">
               <h2 className="font-bold text-xl mb-4 text-primary-200 text-center lg:text-left">
                 Características
               </h2>
@@ -76,10 +125,16 @@ export default function ProjectPage() {
                   <li key={feature}>{feature}</li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <footer className="flex flex-col lg:flex-row items-center justify-center gap-4 my-10">
+          {/* Footer con botones */}
+          <motion.footer
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="flex flex-col lg:flex-row items-center justify-center gap-4 my-10"
+          >
             {project.githubUrl.map((repo, index) => (
               <a
                 key={index}
@@ -101,10 +156,9 @@ export default function ProjectPage() {
                 Demo
               </a>
             )}
-          </footer>
+          </motion.footer>
         </div>
-      </section>
-
+      </motion.section>
     </main>
   )
 }

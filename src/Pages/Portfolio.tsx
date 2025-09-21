@@ -1,17 +1,51 @@
 import { FaArrowRight } from "react-icons/fa";
 import { projects } from "../Data/projectData";
 import { Link } from "react-router-dom";
+import { motion, Variants } from "motion/react";
 
 export default function Portfolio() {
+
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const item: Variants = {
+        hidden: { opacity: 0, y: 50 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
+
     return (
         <section className="min-h-full min-w-full flex flex-col items-center justify-center mt-2" id="projects-section">
-            <h1 className="text-4xl font-black bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent">
+            <motion.h1
+                className="text-4xl font-black bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent"
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+            >
                 Mis Proyectos
-            </h1>
+            </motion.h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
+            <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10"
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+            >
                 {projects.map(project => (
-                    <article key={project.id} className="my-4 ">
+                    <motion.article
+                        key={project.id}
+                        className="my-4"
+                        variants={item}
+                    >
                         <div className="py-20 px-10 rounded-lg bg-radial-[ellipse_at_center] from-black to-bg-100/80">
                             <div className="overflow-hidden bg-gradient-to-br from-primary-100 to-black rounded-lg">
                                 <Link to={`/project/${project.id}`}>
@@ -30,9 +64,9 @@ export default function Portfolio() {
                                 <FaArrowRight className="group-hover:translate-x-5 group-hover:-rotate-45 transition-transform duration-pro" />
                             </Link>
                         </div>
-                    </article>
+                    </motion.article>
                 ))}
-            </div>
+            </motion.div>
         </section>
     )
 }

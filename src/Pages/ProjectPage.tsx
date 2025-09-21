@@ -15,14 +15,14 @@ export default function ProjectPage() {
   const projectTechs = techs.filter(tech => project?.technologies.includes(tech.name))
 
   if (project) return (
-    <main className="container mx-auto">
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-bg-100/70 flex items-center justify-between gap-4 px-4 py-2 rounded-b-lg lg:max-w-5xl lg:mx-auto">
-        <button onClick={() => navigate(-1)} className="btn-rounded cursor-pointer">
+    <main className="">
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-bg-100/70 flex items-center justify-between gap-4 p-4 rounded-b-lg lg:max-w-5xl lg:mx-auto">
+        <button onClick={() => navigate(-1)} className="btn-rounded-link cursor-pointer">
           <MdOutlineArrowBackIos />
         </button>
         <h1 className="text-3xl font-black">{project.title}</h1>
         <div className="flex items-center gap-2">
-          <a href={project.githubUrl[0].url} target="_blank" className="btn-rounded-active">
+          <a href={project.githubUrl[0].url} target="_blank" className="btn-rounded">
             <FaGithub />
           </a>
           {project.demoUrl && (
@@ -34,56 +34,77 @@ export default function ProjectPage() {
       </header>
       <GalleryCarousel images={project.gallery} type={project.type} status={project.status} />
 
-      <section className="p-2 project-container bg-radial-[ellipse_at_bottom] from-bg-100 to-black lg:to-50%">
+      <section className="p-8 lg:p-12 rounded-2xl shadow-lg bg-radial from-bg-100 to-black ">
+        <div className="max-w-5xl mx-auto text-text-200">
+          <p className="my-8 text-lg leading-relaxed text-center text-text-100">
+            {project.description}
+          </p>
 
-        <div className="">
-          <p className="my-6 p-2 text-balance text-center">{project.description}</p>
-
-          <div className="flex flex-wrap items-center justify-around lg:justify-center gap-2 my-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 my-8">
             {projectTechs.map(technology => (
-              <small key={technology.name} className="flex items-center gap-2 bg-bg-200/50 py-1 px-2 rounded-full">
-                <img src={technology.iconPatch} alt={technology.name} className="size-6" />
+              <span
+                key={technology.name}
+                className="cursor-default flex items-center gap-2 py-1.5 px-3 rounded-full text-sm hover:scale-105 hover:shadow-lg hover:shadow-primary-100/40 bg-transparent outline outline-primary-100 transition-all duration-pro"
+              >
+                <img
+                  src={technology.iconPatch}
+                  alt={technology.name}
+                  className="size-6"
+                />
                 {technology.name}
-              </small>
+              </span>
             ))}
           </div>
-
-          <div className="p-2 my-6 flex lg:flex-row flex-col items-start lg:justify-between gap-2">
-            <div>
-              <h2 className="font-black mb-4 text-center lg:text-left">Objetivos</h2>
-              <ul>
+          
+          <div className="grid lg:grid-cols-2 gap-8 my-10">
+            <div className="project-card">
+              <h2 className="font-bold text-xl mb-4 text-primary-200 text-center lg:text-left">
+                Objetivos
+              </h2>
+              <ul className="space-y-2 list-disc list-inside text-text-200">
                 {project.objetives.map(objetive => (
-                  <li key={objetive} className="my-2 list-disc ml-4">{objetive}</li>
+                  <li key={objetive}>{objetive}</li>
                 ))}
               </ul>
             </div>
-            <div>
-              <h2 className="font-black mb-4 text-center lg:text-left">Características</h2>
-              <ul>
+            <div className="project-card">
+              <h2 className="font-bold text-xl mb-4 text-primary-200 text-center lg:text-left">
+                Características
+              </h2>
+              <ul className="space-y-2 list-disc list-inside text-text-200">
                 {project.features.map(feature => (
-                  <li key={feature} className="my-2 list-disc ml-4">{feature}</li>
+                  <li key={feature}>{feature}</li>
                 ))}
               </ul>
             </div>
           </div>
-          <footer className="flex flex-col lg:flex-row items-stretch lg:items-center justify-center gap-2 my-6 px-4 py-2 project-container">
+
+          <footer className="flex flex-col lg:flex-row items-center justify-center gap-4 my-10">
             {project.githubUrl.map((repo, index) => (
-              <a key={index} href={repo.url} target="_blank" className="btn-primary flex items-center justify-center gap-2">
+              <a
+                key={index}
+                href={repo.url}
+                target="_blank"
+                className="btn-primary flex items-center gap-2"
+              >
                 <FaGithub />
                 {repo.type}
               </a>
             ))}
             {project.demoUrl && (
-              <a href={project.demoUrl} target="_blank" className="btn-secundary flex items-center justify-center gap-2">
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                className="btn-secundary flex items-center gap-2"
+              >
                 <HiLink />
                 Demo
               </a>
             )}
           </footer>
-
         </div>
-
       </section>
+
     </main>
   )
 }

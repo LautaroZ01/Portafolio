@@ -22,7 +22,7 @@ export default function AboutMe() {
                                 href="https://github.com/LautaroZ01"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="absolute -bottom-2 -right-2 p-3 bg-primary-100 rounded-full text-text-100 hover:bg-bg-100 border-2 border-bg-100 transition-all duration-300"
+                                className="absolute bottom-0 right-0 btn-rounded scale-125"
                             >
                                 <FaGithub className="text-xl" />
                             </a>
@@ -69,7 +69,7 @@ export default function AboutMe() {
                                     href={media.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 rounded-full text-text-200 hover:bg-primary-100 hover:text-text-100 transition-all duration-300 hover:scale-110"
+                                    className="btn-rounded-link"
                                     aria-label={media.name}
                                 >
                                     <WebIcons name={media.name} />
@@ -78,7 +78,7 @@ export default function AboutMe() {
                         </div>
                         <a
                             href="#contact-me"
-                            className="grow border shadow-lg border-primary-100 hover:border-transparent hover:bg-primary-100 transition-all duration-pro rounded-lg px-6 py-2 text-center"
+                            className="grow btn-secundary text-center"
                         >
                             Contactar Ahora
                         </a>

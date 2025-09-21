@@ -41,7 +41,7 @@ export default function Header() {
                     {webTools.map(web => (
                         <li key={web.id}>
                             <a
-                                className={`${web.color} p-2 flex items-center justify-center rounded-full bg-accent-200 text-text-100 hover:bg-transparent transition-colors duration-pro`}
+                                className='btn-rounded'
                                 href={web.link}
                                 target="_blank"
                             >

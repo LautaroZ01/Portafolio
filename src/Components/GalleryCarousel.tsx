@@ -45,7 +45,7 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
 
     return (
         <div
-            className="relative w-full h-96 md:h-[720px] overflow-hidden rounded-lg mt-8"
+            className="relative h-96 md:min-h-[720px] md:max-w-7xl mx-auto overflow-hidden mt-8"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -74,9 +74,8 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
                 </>
             )}
 
-            {/* Slides Container */}
             <div
-                className="flex h-full transition-transform duration-500 ease-in-out"
+                className="flex size-full transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {images.map((image, index) => (
@@ -87,14 +86,13 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
                         <img
                             src={image}
                             alt={`Slide ${index + 1}`}
-                            className="w-full h-full object-contain aspect-video"
+                            className="w-full h-full object-contain lg:object-cover rounded-lg aspect-video"
                             draggable="false"
                         />
                     </div>
                 ))}
             </div>
 
-            {/* Dots Indicator */}
             {images.length > 1 && (
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                     {images.map((_, index) => (
@@ -111,7 +109,7 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
                     ))}
                 </div>
             )}
-            <div className="absolute top-4 right-4 flex gap-2">
+            <div className="absolute bottom-4 right-4 flex gap-2">
                 <small className="rounded-full bg-primary-100 px-2 py-1">{type}</small>
                 <small className="rounded-full bg-primary-100 px-2 py-1">{status}</small>
             </div>

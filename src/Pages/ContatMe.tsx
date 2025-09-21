@@ -92,7 +92,7 @@ export default function ContatMe() {
                         <div className="w-full flex md:justify-end mt-6">
                             <input
                                 type="submit"
-                                className="bg-primary-100 cursor-pointer border shadow-lg border-transparent rounded-lg hover:bg-transparent hover:border-primary-100 transition-all duration-pro px-10 py-2 w-full md:w-auto"
+                                className="btn-primary"
                             />
                         </div>
                     </form>
@@ -130,7 +130,7 @@ export default function ContatMe() {
                             {socialMedials.map(social => (
                                 <a
                                     key={social.id}
-                                    className={`${social.color} p-2 flex items-center justify-center rounded-full bg-accent-200 text-text-100 hover:bg-transparent transition-colors duration-pro`}
+                                    className='btn-rounded'
                                     href={social.link}
                                 >
                                     <WebIcons name={social.name} />

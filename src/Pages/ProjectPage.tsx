@@ -13,9 +13,8 @@ export default function ProjectPage() {
   const project = projects.find(project => project.id === Number(projectId))
 
   useEffect(() => {
-    document.title = project?.title || "Project Page"
     window.scrollTo(0, 0)
-  }, [project])
+  }, [])
 
   const navigate = useNavigate()
 
@@ -25,7 +24,6 @@ export default function ProjectPage() {
 
   return (
     <main>
-      {/* Header animado */}
       <motion.header
         initial={{ y: -60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -56,7 +54,6 @@ export default function ProjectPage() {
         <GalleryCarousel images={project.gallery} type={project.type} status={project.status} />
       </motion.div>
 
-      {/* Contenido principal */}
       <motion.section
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -64,7 +61,6 @@ export default function ProjectPage() {
         className="p-8 lg:p-12 rounded-2xl shadow-lg bg-radial from-bg-100 to-black"
       >
         <div className="max-w-5xl mx-auto text-text-200">
-          {/* Descripción */}
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -74,7 +70,6 @@ export default function ProjectPage() {
             {project.description}
           </motion.p>
 
-          {/* Tecnologías */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -93,7 +88,6 @@ export default function ProjectPage() {
             ))}
           </motion.div>
 
-          {/* Objetivos y características */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -105,7 +99,14 @@ export default function ProjectPage() {
             transition={{ duration: 0.7, staggerChildren: 0.3 }}
             className="grid lg:grid-cols-2 gap-8 my-10"
           >
-            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="project-card">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              className="project-card"
+            >
               <h2 className="font-bold text-xl mb-4 text-primary-200 text-center lg:text-left">
                 Objetivos
               </h2>
@@ -116,7 +117,14 @@ export default function ProjectPage() {
               </ul>
             </motion.div>
 
-            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="project-card">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              className="project-card"
+            >
               <h2 className="font-bold text-xl mb-4 text-primary-200 text-center lg:text-left">
                 Características
               </h2>

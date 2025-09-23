@@ -71,18 +71,11 @@ export default function AboutMe() {
               Sobre Mí
             </h2>
           </div>
-          <p className="text-text-200 leading-relaxed text-balance text-sm">
-            Soy un desarrollador web apasionado por la programación y el
-            software. Aunque aún no cuento con experiencia profesional, mi
-            entusiasmo me impulsa a aprender constantemente y mejorar mis
-            habilidades. Me especializo en el desarrollo frontend, con un fuerte
-            enfoque en crear experiencias de usuario únicas.
-            <br />
-            <br />
-            Mi objetivo es formar parte de un equipo donde pueda seguir
-            creciendo como profesional, aportando mis conocimientos y aprendiendo
-            de desarrolladores más experimentados. Me motiva enfrentar nuevos
-            desafíos y encontrar soluciones creativas a problemas complejos.
+          <p className="text-text-200 text-balance text-sm mb-4">
+            Soy un desarrollador web apasionado por la programación y el software. Mi entusiasmo me impulsa a aprender constantemente y mejorar mis habilidades. Me especializo en el desarrollo web fullstack.
+          </p>
+          <p className="text-text-200 text-balance text-sm">
+            Mi objetivo es formar parte de un equipo donde pueda seguir creciendo como profesional, aportando mis conocimientos y aprendiendo de desarrolladores más experimentados. Me motiva enfrentar nuevos desafíos y encontrar soluciones creativas a problemas complejos.
           </p>
         </motion.div>
 

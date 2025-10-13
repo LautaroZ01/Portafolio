@@ -10,7 +10,6 @@ export default function AboutMe() {
       id="about-me"
     >
       <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Tarjeta izquierda */}
         <motion.div
           className="lg:col-span-4 row-span-2 p-8 rounded-2xl bg-gradient-to-br from-bg-100 to-black flex flex-col items-center justify-between"
           initial={{ opacity: 0, x: -60 }}
@@ -57,7 +56,6 @@ export default function AboutMe() {
           </a>
         </motion.div>
 
-        {/* Sobre mí */}
         <motion.div
           className="lg:col-span-8 p-8 rounded-2xl bg-gradient-to-br from-bg-100 to-black group"
           initial={{ opacity: 0, y: 60 }}
@@ -79,7 +77,6 @@ export default function AboutMe() {
           </p>
         </motion.div>
 
-        {/* Tarjeta derecha */}
         <motion.div
           className="lg:col-span-4 lg:col-start-9 p-8 rounded-2xl bg-gradient-to-br from-bg-100 to-black flex flex-col justify-between"
           initial={{ opacity: 0, x: 60 }}

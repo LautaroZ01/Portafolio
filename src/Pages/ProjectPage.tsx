@@ -54,11 +54,29 @@ export default function ProjectPage() {
         <GalleryCarousel images={project.gallery} type={project.type} status={project.status} />
       </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="flex flex-wrap items-center justify-center gap-3 mt-8"
+      >
+        {projectTechs.map(technology => (
+          <span key={technology.name} className="badge-skills">
+            <img
+              src={technology.iconPatch}
+              alt={technology.name}
+              className="size-6"
+            />
+            {technology.name}
+          </span>
+        ))}
+      </motion.div>
+
       <motion.section
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-        className="p-8 lg:p-12 rounded-2xl shadow-lg bg-radial from-bg-100 to-black"
+        className="p-8 rounded-2xl shadow-lg bg-radial from-bg-100 to-black"
       >
         <div className="max-w-5xl mx-auto text-text-200">
           <motion.p
@@ -69,24 +87,6 @@ export default function ProjectPage() {
           >
             {project.description}
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-3 my-8"
-          >
-            {projectTechs.map(technology => (
-              <span key={technology.name} className="badge-skills">
-                <img
-                  src={technology.iconPatch}
-                  alt={technology.name}
-                  className="size-6"
-                />
-                {technology.name}
-              </span>
-            ))}
-          </motion.div>
 
           <motion.div
             initial="hidden"
@@ -107,10 +107,10 @@ export default function ProjectPage() {
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               className="project-card"
             >
-              <h2 className="font-bold text-xl mb-4 text-primary-200 text-center lg:text-left">
+              <h2>
                 Objetivos
               </h2>
-              <ul className="space-y-2 list-disc list-inside text-text-200">
+              <ul>
                 {project.objetives.map(objetive => (
                   <li key={objetive}>{objetive}</li>
                 ))}
@@ -125,10 +125,10 @@ export default function ProjectPage() {
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               className="project-card"
             >
-              <h2 className="font-bold text-xl mb-4 text-primary-200 text-center lg:text-left">
+              <h2>
                 Características
               </h2>
-              <ul className="space-y-2 list-disc list-inside text-text-200">
+              <ul>
                 {project.features.map(feature => (
                   <li key={feature}>{feature}</li>
                 ))}
@@ -136,7 +136,6 @@ export default function ProjectPage() {
             </motion.div>
           </motion.div>
 
-          {/* Footer con botones */}
           <motion.footer
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}

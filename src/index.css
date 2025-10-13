@@ -51,7 +51,15 @@
 }
 
 .project-card {
-  @apply bg-gradient-to-br from-bg-100/20 to-transparent from-10% border border-bg-200/40 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow shadow-bg-200/60;
+  @apply from-10% border border-bg-200/60 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-primary-100/40 transition-all duration-pro;
+
+  h2{
+    @apply font-bold text-xl mb-6 text-primary-200;
+  }
+
+  ul {
+    @apply space-y-4 text-text-200;
+  }
 }
 
 .badge-skills {

@@ -6,9 +6,8 @@ export default function Index() {
       className="min-h-full min-w-full flex flex-col items-center justify-center gap-6 bg-radial-[ellipse_at_top] from-bg-100 via-transparent to-black"
       id="home-section"
     >
-      {/* Imagen de perfil */}
       <motion.div
-        className="rounded-full border border-primary-100"
+        className="rounded-full border border-primary-100 relative"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -20,7 +19,6 @@ export default function Index() {
         />
       </motion.div>
 
-      {/* Texto de presentación */}
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 40 }}
@@ -40,7 +38,6 @@ export default function Index() {
         </p>
       </motion.div>
 
-      {/* Botones */}
       <motion.div
         className="flex items-center gap-6"
         initial={{ opacity: 0, y: 40 }}

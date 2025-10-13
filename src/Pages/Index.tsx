@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 export default function Index() {
   return (
     <main
-      className="min-h-full min-w-full flex flex-col items-center justify-center gap-6 bg-radial-[ellipse_at_top] from-bg-100 via-transparent to-black"
+      className="min-h-full min-w-full flex flex-col items-center justify-center gap-6 bg-radial-[ellipse_at_top] from-primary-900 via-transparent to-primary-950"
       id="home-section"
     >
       <motion.div
@@ -28,7 +28,7 @@ export default function Index() {
         <small className="block">Hola ! 👋🏻,</small>
         <h1 className="text-4xl font-black text-gray-200">
           Soy{" "}
-          <span className="bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary-300 to-primary-600 bg-clip-text text-transparent">
             Zuleta Lautaro
           </span>
         </h1>

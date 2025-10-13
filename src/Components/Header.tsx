@@ -16,8 +16,8 @@ export default function Header() {
             initial={{ translateY: "-100%" }}
             animate={{ translateY: "0%" }}
             transition={{ duration: 0.5 }}
-            className="bg-black/80 transition-all duration-pro p-4 rounded-b-lg flex md:flex-row justify-between items-center lg:backdrop-blur-md sticky top-0 z-30 container mx-auto">
-            <a href="#" className="text-3xl font-black hover:text-current text-primary-200 transition-colors duration-pro basis-36">
+            className="bg-primary-900/30 transition-all duration-pro p-4 rounded-lg flex md:flex-row justify-between items-center lg:backdrop-blur-md sticky top-2 z-30 container mx-auto">
+            <a href="#" className="text-3xl font-black hover:text-current text-primary-400 transition-colors duration-pro basis-36">
                 <span>LZ</span>
             </a>
 
@@ -36,7 +36,7 @@ export default function Header() {
                     {routes.map(route => (
                         <li key={route.name} className="lg:mb-2 md:mb-0">
                             <a href={route.path}
-                                className="hover:text-primary-200 transition-colors duration-pro"
+                                className="hover:text-accent-400 text-gray-300 transition-colors duration-pro"
                             >
                                 {route.name}
                             </a>

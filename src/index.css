@@ -91,3 +91,11 @@
 .badge-skills {
   @apply cursor-default flex items-center gap-2 py-1.5 px-3 rounded-full text-sm hover:scale-105 hover:shadow-lg hover:shadow-primary-100/40 bg-transparent outline outline-primary-100 transition-all duration-pro;
 }
+
+.about-me-grid-item {
+  @apply p-10;
+}
+
+.subtitle {
+  @apply font-bold bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent my-4;
+}

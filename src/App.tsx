@@ -17,9 +17,7 @@ function App() {
         <Index />
       </Container>
 
-      <Container>
-        <AboutMe />
-      </Container>
+      <AboutMe />
 
       <div className="container mx-auto p-2">
         <Portfolio />

@@ -23,25 +23,25 @@ export default function AboutMe() {
           <h2 className="text-2xl subtitle">Zuleta Lautaro</h2>
           <p className="font-semibold text-gray-400">Desarrollador Full Stack</p>
           <a href="mailto:lautarozule80@gmail.com" className="text-sm text-gray-400">lautarozule80@gmail.com</a>
-          <a href="#projects-section" className="flex text-sm text-primary-400 my-2 group items-center gap-2 hover:text-primary-500 transition-colors duration-pro">
+          <a href="#projects-section" className="btn-link-arrow group my-4">
             Ver proyectos
-            <FaArrowRight className="group-hover:translate-x-1 transition-transform " />
+            <FaArrowRight/>
           </a>
         </div>
         <div className="col-span-3 border-r border-b border-primary-800/40 about-me-grid-item">
           <h3 className="text-2xl subtitle">Sobre Mí</h3>
-          <p className="text-text-200 text-sm mb-4">
+          <p className="text-text-200 mb-4">
             Soy un desarrollador web apasionado por la programación y el software. Mi entusiasmo me impulsa a aprender constantemente y mejorar mis habilidades. Me especializo en el desarrollo web fullstack.
           </p>
-          <p className="text-text-200 text-sm">
+          <p className="text-text-200">
             Mi objetivo es formar parte de un equipo donde pueda seguir creciendo como profesional, aportando mis conocimientos y aprendiendo de desarrolladores más experimentados. Me motiva enfrentar nuevos desafíos y encontrar soluciones creativas a problemas complejos.
           </p>
         </div>
         <div className="col-start-4 row-start-2 border-x border-primary-800/40 about-me-grid-item">
           <h3 className="subtitle text-xl">¿Tienes un proyecto en mente?</h3>
-          <a href="#contact-me" className="flex text-sm group items-center gap-2 hover:text-primary-500 transition-colors duration-pro my-8">
+          <a href="#contact-me" className="btn-link-arrow group my-8">
             Contactar Ahora
-            <FaArrowRight className="group-hover:translate-x-1 transition-transform " />
+            <FaArrowRight/>
           </a>
           <div className="flex gap-4">
             {socialMedials.map((media) => (

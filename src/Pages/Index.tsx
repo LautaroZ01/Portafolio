@@ -7,7 +7,7 @@ export default function Index() {
       id="home-section"
     >
       <motion.div
-        className="rounded-full border border-primary-100 relative"
+        className="rounded-full border border-primary-800/40 relative"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}

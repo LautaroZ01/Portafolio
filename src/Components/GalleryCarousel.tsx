@@ -4,11 +4,9 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface ImageCarouselProps {
     images: Project['gallery'];
-    type: Project['type'];
-    status: Project['status'];
 }
 
-export default function ImageCarousel({ images, type, status }: ImageCarouselProps) {
+export default function ImageCarousel({ images }: ImageCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -45,7 +43,7 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
 
     return (
         <div
-            className="relative h-96 md:min-h-[720px] md:max-w-7xl mx-auto overflow-hidden mt-8"
+            className="relative overflow-hidden my-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -56,7 +54,7 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
                             e.stopPropagation();
                             prevSlide();
                         }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full z-10 hover:bg-black/50 transition-all duration-300 transform hover:scale-110 cursor-pointer ease-in-out"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-primary-600/50 text-primary-50 hover:bg-primary-700/50 backdrop-blur-lg transition-colors duration-pro cursor-pointer"
                         aria-label="Previous image"
                     >
                         <FaChevronLeft size={16} />
@@ -66,7 +64,7 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
                             e.stopPropagation();
                             nextSlide();
                         }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full z-10 hover:bg-black/50 transition-all duration-300 transform hover:scale-110 cursor-pointer ease-in-out"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-primary-600/50 text-primary-50 hover:bg-primary-700/50 backdrop-blur-lg transition-colors duration-pro cursor-pointer"
                         aria-label="Next image"
                     >
                         <FaChevronRight size={16} />
@@ -75,7 +73,7 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
             )}
 
             <div
-                className="flex size-full transition-transform duration-500 ease-in-out"
+                className="flex transition-transform duration-500 ease-in-out aspect-video"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {images.map((image, index) => (
@@ -86,7 +84,7 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
                         <img
                             src={image}
                             alt={`Slide ${index + 1}`}
-                            className="w-full h-full object-contain lg:object-cover rounded-lg aspect-video"
+                            className="object-contain rounded-lg aspect-video"
                             draggable="false"
                         />
                     </div>
@@ -102,17 +100,13 @@ export default function ImageCarousel({ images, type, status }: ImageCarouselPro
                                 e.stopPropagation();
                                 goToSlide(index);
                             }}
-                            className={`w-2 h-2 rounded-full transition-all cursor-pointer ease-in-out duration-300 ${index === currentIndex ? 'bg-white w-4' : 'bg-white/50 hover:bg-white/70'
+                            className={`w-2 h-2 rounded-full transition-all cursor-pointer ease-in-out duration-300 ${index === currentIndex ? 'bg-accent-400 w-4' : 'bg-accent-400/50 hover:bg-accent-400/70'
                                 }`}
                             aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
                 </div>
             )}
-            <div className="absolute bottom-4 right-4 flex gap-2">
-                <small className="rounded-full bg-primary-100 px-2 py-1">{type}</small>
-                <small className="rounded-full bg-primary-100 px-2 py-1">{status}</small>
-            </div>
         </div>
     );
 }

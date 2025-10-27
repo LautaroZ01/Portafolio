@@ -72,6 +72,14 @@
   @apply bg-primary-500 shadow rounded-lg hover:bg-primary-200 hover:text-primary-800 hover:shadow-primary-200 transition-all duration-pro px-6 py-2 cursor-pointer;
 }
 
+.btn-link-arrow {
+  @apply flex items-center gap-2 text-accent-300 text-sm hover:text-accent-400 transition-colors duration-pro;
+
+  svg {
+    @apply group-hover:translate-x-2 group-hover:-rotate-45 transition-transform duration-pro;
+  }
+}
+
 .project-container {
   @apply lg:max-w-5xl lg:mx-auto;
 }

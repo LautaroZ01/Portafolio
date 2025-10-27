@@ -24,7 +24,7 @@ export default function Portfolio() {
     return (
         <section className="min-h-full min-w-full flex flex-col items-center justify-center mt-2" id="projects-section">
             <motion.h1
-                className="text-4xl font-black bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent"
+                className="text-4xl subtitle"
                 initial={{ opacity: 0, y: -30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -46,22 +46,22 @@ export default function Portfolio() {
                         className="my-4"
                         variants={item}
                     >
-                        <div className="py-20 px-10 rounded-lg bg-radial-[ellipse_at_center] from-black to-bg-100/80">
-                            <div className="overflow-hidden bg-gradient-to-br from-primary-100 to-black rounded-lg">
+                        <div className="py-20 px-10 rounded-md bg-radial-[ellipse_at_center] from-primary-900 to-primary-950">
+                            <div className="overflow-hidden rounded">
                                 <Link to={`/project/${project.id}`}>
                                     <img
                                         src={project.thumbnail}
                                         alt={project.title}
-                                        className="bg-bg-100 object-top translate-6 object-cover aspect-video shadow-lg rounded-md shadow-bg-100 hover:translate-none transition-transform duration-pro"
+                                        className="bg-bg-100 object-top object-cover aspect-video shadow-lg shadow-bg-100 hover:scale-110 transition-transform duration-pro"
                                     />
                                 </Link>
                             </div>
                         </div>
-                        <div className="gap-4 my-4 flex flex-col items-start justify-start">
-                            <h3 className="bg-gradient-to-r from-primary-100 to-white bg-clip-text text-transparent text-3xl font-black">{project.title}</h3>
-                            <Link to={`/project/${project.id}`} className="uppercase font-medium flex items-center gap-2 text-primary-200 text-sm group">
+                        <div className="flex flex-col items-start justify-start">
+                            <h3 className=" text-3xl subtitle">{project.title}</h3>
+                            <Link to={`/project/${project.id}`} className="btn-link-arrow group">
                                 Saber más
-                                <FaArrowRight className="group-hover:translate-x-5 group-hover:-rotate-45 transition-transform duration-pro" />
+                                <FaArrowRight />
                             </Link>
                         </div>
                     </motion.article>

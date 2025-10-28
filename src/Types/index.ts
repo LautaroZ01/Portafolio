@@ -12,5 +12,6 @@ export type Tool = {
 
 export type ContactInfo = {
     type: string
-    value: string
+    name: string
+    link: string
 }

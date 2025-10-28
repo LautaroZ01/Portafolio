@@ -1,7 +1,7 @@
-import { FaArrowRight } from "react-icons/fa";
 import { projects } from "../Data/projectData";
 import { Link } from "react-router-dom";
 import { motion, Variants } from "motion/react";
+import WebIcons from "../Components/WebIcons";
 
 export default function Portfolio() {
 
@@ -61,7 +61,7 @@ export default function Portfolio() {
                             <h3 className=" text-3xl subtitle">{project.title}</h3>
                             <Link to={`/project/${project.id}`} className="btn-link-arrow group">
                                 Saber más
-                                <FaArrowRight />
+                                <WebIcons name="ArrowRight" />
                             </Link>
                         </div>
                     </motion.article>

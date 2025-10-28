@@ -1,4 +1,4 @@
-import { FaGithub, FaArrowRight } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { socialMedials } from "../Data/data";
 import WebIcons from "../Components/WebIcons";
 import { motion } from "motion/react";
@@ -6,9 +6,9 @@ import { motion } from "motion/react";
 export default function AboutMe() {
   return (
 
-    <section className="border-y border-primary-800/40 w-full mt-20 mb-40">
-      <div className="grid grid-cols-4 grid-rows-2 container mx-auto">
-        <div className="row-span-2 border-x border-primary-800/40 about-me-grid-item">
+    <section className="border-y border-primary-800/40 w-full mt-20 mb-40" id="about-me">
+      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-2 container mx-auto">
+        <div className="lg:row-span-2 lg:border-x border-b lg:border-b-0 border-primary-800/40 about-me-grid-item">
           <div className="size-30 grid place-items-center rounded-full bg-primary-900 relative">
             <img src="/user-index.svg" alt="Foto de Perfil" className="size-full rounded-full object-cover" />
             <a
@@ -25,10 +25,11 @@ export default function AboutMe() {
           <a href="mailto:lautarozule80@gmail.com" className="text-sm text-gray-400">lautarozule80@gmail.com</a>
           <a href="#projects-section" className="btn-link-arrow group my-4">
             Ver proyectos
-            <FaArrowRight/>
+            <WebIcons name="ArrowRight" />
           </a>
         </div>
-        <div className="col-span-3 border-r border-b border-primary-800/40 about-me-grid-item">
+
+        <div className="lg:col-span-3 lg:border-r border-b border-primary-800/40 about-me-grid-item">
           <h3 className="text-2xl subtitle">Sobre Mí</h3>
           <p className="text-text-200 mb-4">
             Soy un desarrollador web apasionado por la programación y el software. Mi entusiasmo me impulsa a aprender constantemente y mejorar mis habilidades. Me especializo en el desarrollo web fullstack.
@@ -37,11 +38,12 @@ export default function AboutMe() {
             Mi objetivo es formar parte de un equipo donde pueda seguir creciendo como profesional, aportando mis conocimientos y aprendiendo de desarrolladores más experimentados. Me motiva enfrentar nuevos desafíos y encontrar soluciones creativas a problemas complejos.
           </p>
         </div>
-        <div className="col-start-4 row-start-2 border-x border-primary-800/40 about-me-grid-item">
+
+        <div className="lg:col-start-4 lg:row-start-2 lg:border-x border-primary-800/40 about-me-grid-item">
           <h3 className="subtitle text-xl">¿Tienes un proyecto en mente?</h3>
           <a href="#contact-me" className="btn-link-arrow group my-8">
             Contactar Ahora
-            <FaArrowRight/>
+            <WebIcons name="ArrowRight" />
           </a>
           <div className="flex gap-4">
             {socialMedials.map((media) => (

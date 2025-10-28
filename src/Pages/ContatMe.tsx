@@ -1,21 +1,13 @@
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useRef } from "react";
 import WebIcons from "../Components/WebIcons";
 import { contactInfo, socialMedials } from "../Data/data";
 import { toast } from "react-toastify";
 import emailjs from '@emailjs/browser';
-import { FaCheck } from "react-icons/fa";
-import { motion, Variants } from "motion/react";
+import { AiFillMessage } from "react-icons/ai";
+
+// https://es.pinterest.com/pin/71002131620606027/
 
 export default function ContactMe() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleCopy = (value: string) => {
-        setIsHovered(true);
-        setTimeout(() => setIsHovered(false), 1000);
-        navigator.clipboard.writeText(value);
-        toast.success("Copiado al portapapeles");
-    };
 
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -46,186 +38,88 @@ export default function ContactMe() {
             );
     };
 
-    // Variantes de animación
-    const container = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: { staggerChildren: 0.2 },
-        },
-    };
-
-    const item: Variants = {
-        hidden: { opacity: 0, y: 30 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-    };
-
     return (
-        <section
-            className="mt-20 min-h-full min-w-full bg-radial-[ellipse_at_bottom] from-bg-100 via-transparent to-black flex flex-col items-center"
-            id="contact-me"
-        >
-            <motion.h2
-                className="bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent font-black text-4xl"
-                initial={{ opacity: 0, y: -40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true }}
-            >
-                Contáctame aquí
-            </motion.h2>
-
-            <motion.p
-                className="mb-6 mt-2 text-center"
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                viewport={{ once: true }}
-            >
-                ¿Tienes alguna pregunta o quieres trabajar junto a mí? ¡No dudes en
-                contactarme!
-            </motion.p>
-
-            <div className="flex flex-wrap gap-6 justify-center overflow-hidden">
-                <motion.div
-                    className="flex flex-col gap-4 text-center grow"
-                    initial={{ opacity: 0, x: -80 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                >
-                    <form
-                        className="max-w-xl p-6 flex flex-col items-start mx-auto"
-                        onSubmit={sendEmail}
-                        ref={formRef}
-                    >
-                        <motion.div
-                            className="flex flex-col gap-2 items-start w-full mt-6"
-                            variants={item}
-                        >
-                            <label htmlFor="name">Nombre</label>
-                            <input
-                                required
-                                type="text"
-                                name="user_name"
-                                id="name"
-                                placeholder="Tu nombre"
-                                className="input-data w-full p-4 border border-bg-100 focus:border-bg-200 focus:outline-none rounded-md"
-                            />
-                        </motion.div>
-
-                        <motion.div
-                            className="flex flex-col gap-2 items-start w-full mt-6"
-                            variants={item}
-                        >
-                            <label htmlFor="email">Correo electrónico</label>
-                            <input
-                                required
-                                type="email"
-                                name="user_email"
-                                id="email"
-                                placeholder="Tu correo electrónico"
-                                className="input-data w-full p-4 border border-bg-100 focus:border-bg-200 focus:outline-none rounded-md"
-                            />
-                        </motion.div>
-
-                        <motion.div
-                            className="flex flex-col gap-2 items-start w-full mt-6"
-                            variants={item}
-                        >
-                            <label htmlFor="content">Mensaje</label>
-                            <textarea
-                                required
-                                name="message"
-                                id="content"
-                                cols={60}
-                                className="input-data w-full p-4 min-h-48 border border-bg-100 focus:border-bg-200 focus:outline-none rounded-md"
-                                placeholder="Puedes hacer tu pregunta aquí"
-                            ></textarea>
-                        </motion.div>
-
-                        <div
-                            className="w-full flex md:justify-end mt-6"
-                        >
-                            <input type="submit" className="btn-primary cursor-pointer" />
-                        </div>
-                    </form>
-                </motion.div>
-
-                <motion.div
-                    className="col-start-5 flex flex-col md:p-6 p-2"
-                    initial={{ opacity: 0, x: 80 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                >
-                    <div className="md:p-2">
-                        <h3 className="bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent font-bold text-xl text-center md:text-left">
-                            Información de contacto
-                        </h3>
-                        <motion.div
-                            className="mt-2 py-4 flex flex-col w-full"
-                            variants={container}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                        >
-                            {contactInfo.map((info, index) => (
-                                <motion.button
-                                    key={index}
-                                    className="flex flex-col items-start mt-3 relative group grow cursor-pointer px-4"
-                                    onMouseEnter={() => setHoveredIndex(index)}
-                                    onMouseLeave={() => setHoveredIndex(null)}
-                                    onClick={() => handleCopy(info.value)}
-                                    variants={item}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <strong className="text-primary-100 font-bold">
-                                        {info.type}
-                                    </strong>
-                                    <span>
-                                        {info.type === "Dirección"
-                                            ? info.value
-                                            : `Click para copiar ${info.type}`}
-                                    </span>
-                                    {hoveredIndex === index && (
-                                        <span className="absolute top-0 -right-4 p-2 rounded-full">
-                                            {isHovered ? <FaCheck /> : <WebIcons name="Copy" />}
-                                        </span>
-                                    )}
-                                </motion.button>
-                            ))}
-                        </motion.div>
-                    </div>
-
-                    <div className="md:p-2">
-                        <h3 className="bg-gradient-to-r from-primary-100 to-primary-200 bg-clip-text text-transparent font-bold text-xl text-center md:text-left">
-                            Redes sociales
-                        </h3>
-                        <motion.div
-                            className="mt-2 p-4 flex justify-center md:justify-start gap-4 basis-36"
-                            variants={container}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                        >
-                            {socialMedials.map((social) => (
-                                <motion.a
-                                    key={social.id}
-                                    className="btn-rounded"
-                                    href={social.link}
-                                    variants={item}
-                                    whileHover={{ scale: 1.15, rotate: 5 }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    <WebIcons name={social.name} />
-                                </motion.a>
-                            ))}
-                        </motion.div>
-                    </div>
-                </motion.div>
+        <section id="contact-me" className="w-full mt-20 p-4 bg-radial-[ellipse_at_bottom] from-primary-900 via-transparent to-primary-950">
+            <div className="text-center">
+                <AiFillMessage className="size-24 mx-auto text-accent-500" />
+                <h2 className="text-4xl subtitle">Contáctame aquí</h2>
+                <p>¿Tienes alguna pregunta o quieres trabajar junto a mí? ¡No dudes en contactarme!</p>
             </div>
+            <div className="flex items-center justify-center my-8">
+                {contactInfo.map((info, index) => (
+                    <a
+                        key={index}
+                        href={info.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 cursor-pointer px-4 text-primary-300 text-sm hover:text-primary-400 transition-colors duration-pro group"
+                    >
+                        <WebIcons name={info.type} color="text-primary-100 text-2xl text-primary-300 rounded-full p-2 group-hover:text-primary-400 transition-colors duration-pro" />
+                        <p>{info.name}</p>
+                    </a>
+                ))}
+            </div>
+            <div className="flex items-center justify-center gap-8">
+                {socialMedials.map((social) => (
+                    <a
+                        key={social.id}
+                        className="btn-link-arrow group"
+                        href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {social.name}
+                        <WebIcons name="ArrowRight" />
+                    </a>
+                ))}
+            </div>
+
+            <hr className="my-8 max-w-2xl mx-auto border-primary-800/40" />
+
+            <form
+                onSubmit={sendEmail}
+                ref={formRef}
+                className="form-contact"
+            >
+                <div>
+                    <label htmlFor="name" className="">Nombre</label>
+                    <input
+                        required
+                        type="text"
+                        name="user_name"
+                        id="name"
+                        placeholder="Ej. Juan Perez"
+                        className=""
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor="email">Correo electrónico</label>
+                    <input
+                        required
+                        type="email"
+                        name="user_email"
+                        id="email"
+                        placeholder="ejemplo@gmail.com"
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor="content">Mensaje</label>
+                    <textarea
+                        required
+                        name="message"
+                        id="content"
+                        cols={60}
+                        rows={5}
+                        placeholder="Puedes hacer tu pregunta aquí"
+                    ></textarea>
+                </div>
+
+
+                <input type="submit" className="btn-primary cursor-pointer w-full mt-6" />
+
+            </form>
         </section>
     );
 }

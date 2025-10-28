@@ -27,9 +27,8 @@ function App() {
         <SkillsCarousel />
       </div>
 
-      <Container>
-        <ContatMe />
-      </Container>
+
+      <ContatMe />
 
       <div className="container mx-auto p-2">
         <Footer />

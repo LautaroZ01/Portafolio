@@ -139,14 +139,17 @@ export const skills: Tool[] = [
 export const contactInfo: ContactInfo[] = [
     {
         type: 'Email',
-        value: 'lautarozule80@gmail.com'
+        name: 'lautarozule80@gmail.com',
+        link: 'mailto:lautarozule80@gmail.com'
     },
     {
-        type: 'Teléfono',
-        value: '+54 387 192 845'
+        type: 'Phone',
+        name: '+54 3875 192 845',
+        link: 'https://wa.me/5493875192845?text=Hola!%20Estoy%20interesado%20en%20trabajar%20contigo.%20Quiero%20más%20información.'
     },
     {
-        type: 'Dirección',
-        value: 'Salta Capital, Salta, Argentina'
+        type: 'Address',
+        name: 'Salta Capital, Salta, Argentina',
+        link: 'https://www.google.com/maps/place/Salta+Capital,+Salta,+Argentina'
     }
 ];

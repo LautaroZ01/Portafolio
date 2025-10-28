@@ -107,3 +107,19 @@
 .subtitle {
   @apply font-bold bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent my-4;
 }
+
+.form-contact {
+  @apply p-6 max-w-xl bg-primary-900/40 drop-shadow-2xl rounded-lg mx-auto my-4;
+
+  div{
+    @apply flex flex-col gap-2 w-full mb-6 py-2;
+
+    label{
+      @apply text-sm text-accent-300;
+    }
+
+    input, textarea{
+      @apply p-2 border border-primary-800/40 bg-primary-700/30 text-primary-100 placeholder:text-primary-100/40 rounded-md outline-none focus:outline-none focus:border-primary-800/80;
+    }
+  }
+}

@@ -109,7 +109,7 @@
 }
 
 .form-contact {
-  @apply p-6 max-w-xl bg-primary-900/40 drop-shadow-2xl rounded-lg mx-auto my-4;
+  @apply p-6 lg:max-w-xl bg-primary-900/40 drop-shadow-2xl rounded-lg mx-auto my-4;
 
   div{
     @apply flex flex-col gap-2 w-full mb-6 py-2;

@@ -1,4 +1,4 @@
-import { FormEvent, useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
 import WebIcons from "../Components/WebIcons";
 import { contactInfo, socialMedials } from "../Data/data";
 import { toast } from "react-toastify";
@@ -8,10 +8,12 @@ import { AiFillMessage } from "react-icons/ai";
 // https://es.pinterest.com/pin/71002131620606027/
 
 export default function ContactMe() {
+    const [isLoading, setIsLoading] = useState(false);
 
     const formRef = useRef<HTMLFormElement>(null);
 
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+        setIsLoading(true);
         e.preventDefault();
 
         const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
@@ -30,22 +32,24 @@ export default function ContactMe() {
                 () => {
                     toast.success("Correo enviado con éxito");
                     formRef.current?.reset();
+                    setIsLoading(false);
                 },
                 (error) => {
                     toast.error("Correo no enviado, hubo un problema");
                     console.error(error);
+                    setIsLoading(false);
                 }
             );
     };
 
     return (
         <section id="contact-me" className="w-full mt-20 p-4 bg-radial-[ellipse_at_bottom] from-primary-900 via-transparent to-primary-950">
-            <div className="text-center">
+            <div className="text-center space-y-6">
                 <AiFillMessage className="size-24 mx-auto text-accent-500" />
                 <h2 className="text-4xl subtitle">Contáctame aquí</h2>
                 <p>¿Tienes alguna pregunta o quieres trabajar junto a mí? ¡No dudes en contactarme!</p>
             </div>
-            <div className="flex items-center justify-center my-8">
+            <div className="flex flex-col md:flex-row items-center justify-center my-8 gap-4 md:gap-8">
                 {contactInfo.map((info, index) => (
                     <a
                         key={index}
@@ -117,7 +121,7 @@ export default function ContactMe() {
                 </div>
 
 
-                <input type="submit" className="btn-primary cursor-pointer w-full mt-6" />
+                <input type="submit" disabled={isLoading} value={isLoading ? "Enviando..." : "Enviar"} className="btn-primary cursor-pointer w-full mt-6" />
 
             </form>
         </section>

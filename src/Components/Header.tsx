@@ -24,7 +24,7 @@ export default function Header() {
             <div className="w-full flex items-center justify-end lg:hidden">
                 <button
                     onClick={toggleMenuOpen}
-                    className="cursor-pointer p-2 flex items-center justify-center rounded-full bg-accent-200 text-text-100 hover:bg-transparent transition-colors duration-pro">
+                    className="cursor-pointer p-2 flex items-center justify-center rounded-full bg-accent-950 text-text-300 hover:bg-transparent transition-colors duration-pro">
                     <BiMenuAltRight />
                 </button>
             </div>

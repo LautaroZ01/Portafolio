@@ -38,7 +38,6 @@ export default function Portfolio() {
                 variants={container}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
             >
                 {projects.map(project => (
                     <motion.article

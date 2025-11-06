@@ -4,13 +4,34 @@ import { contactInfo, socialMedials } from "../Data/data";
 import { toast } from "react-toastify";
 import emailjs from '@emailjs/browser';
 import { AiFillMessage } from "react-icons/ai";
-
-// https://es.pinterest.com/pin/71002131620606027/
+import { motion, Variants } from "motion/react";
 
 export default function ContactMe() {
     const [isLoading, setIsLoading] = useState(false);
 
     const formRef = useRef<HTMLFormElement>(null);
+
+    const variant = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    }
+
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                delayChildren: 0.7,
+                staggerChildren: 0.7,
+            },
+        },
+    };
+
+    const item: Variants = {
+        hidden: { opacity: 0, y: 50 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
 
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         setIsLoading(true);
@@ -49,7 +70,12 @@ export default function ContactMe() {
                 <h2 className="text-4xl subtitle">Contáctame aquí</h2>
                 <p>¿Tienes alguna pregunta o quieres trabajar junto a mí? ¡No dudes en contactarme!</p>
             </div>
-            <div className="flex flex-col md:flex-row items-center justify-center my-8 gap-4 md:gap-8">
+            <motion.div
+                variants={variant}
+                initial={{ opacity: 0}}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="flex flex-col md:flex-row items-center justify-center my-8 gap-4 md:gap-8">
                 {contactInfo.map((info, index) => (
                     <a
                         key={index}
@@ -62,28 +88,39 @@ export default function ContactMe() {
                         <p>{info.name}</p>
                     </a>
                 ))}
-            </div>
-            <div className="flex items-center justify-center gap-8">
+            </motion.div>
+            <motion.div
+                className="flex items-center justify-center gap-8"
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                transition={{ duration: 0.8, delay: 0.6 }}
+            >
                 {socialMedials.map((social) => (
-                    <a
+                    <motion.a
                         key={social.id}
                         className="btn-link-arrow group"
                         href={social.link}
                         target="_blank"
                         rel="noopener noreferrer"
+                        variants={item}
                     >
                         {social.name}
                         <WebIcons name="ArrowRight" />
-                    </a>
+                    </motion.a>
                 ))}
-            </div>
+            </motion.div>
 
             <hr className="my-8 max-w-2xl mx-auto border-primary-800/40" />
 
-            <form
+            <motion.form
                 onSubmit={sendEmail}
                 ref={formRef}
                 className="form-contact"
+                variants={variant}
+                whileInView="visible"
+                initial="hidden"
+                transition={{ duration: 0.8, delay: 0.8 }}
             >
                 <div>
                     <label htmlFor="name" className="">Nombre</label>
@@ -123,7 +160,7 @@ export default function ContactMe() {
 
                 <input type="submit" disabled={isLoading} value={isLoading ? "Enviando..." : "Enviar"} className="btn-primary cursor-pointer w-full mt-6" />
 
-            </form>
+            </motion.form>
         </section>
     );
 }

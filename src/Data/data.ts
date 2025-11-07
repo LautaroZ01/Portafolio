@@ -82,58 +82,124 @@ export const skills: Tool[] = [
     },
     {
         id: 5,
-        name: 'TailwindCSS',
-        link: '#',
-        color: 'text-cyan-500'
-    },
-    {
-        id: 6,
-        name: 'React',
-        link: '#',
-        color: 'text-blue-600'
-    },
-    {
-        id: 7,
-        name: 'Node.js',
-        link: '#',
-        color: 'text-green-500'
-    },
-    {
-        id: 8,
         name: 'Python',
         link: '#',
         color: 'text-yellow-600'
     },
     {
+        id: 6,
+        name: 'PHP',
+        link: '#',
+        color: 'text-indigo-400'
+    },
+    {
+        id: 7,
+        name: 'Java',
+        link: '#',
+        color: 'text-red-700'
+    },
+    {
+        id: 8,
+        name: 'React',
+        link: '#',
+        color: 'text-cyan-400'
+    },
+    {
         id: 9,
+        name: 'Astro',
+        link: '#',
+        color: 'text-pink-600'
+    },
+    {
+        id: 10,
+        name: 'Next.js',
+        link: '#',
+        color: 'text-gray-200'
+    },
+    {
+        id: 11,
+        name: 'TailwindCSS',
+        link: '#',
+        color: 'text-cyan-500'
+    },
+    {
+        id: 12,
+        name: 'Bootstrap',
+        link: '#',
+        color: 'text-purple-600'
+    },
+    {
+        id: 13,
+        name: 'Node.js',
+        link: '#',
+        color: 'text-green-500'
+    },
+    {
+        id: 14,
+        name: 'Express',
+        link: '#',
+        color: 'text-gray-100'
+    },
+    {
+        id: 15,
         name: 'Django',
         link: '#',
         color: 'text-green-700'
     },
     {
-        id: 10,
-        name: 'PostgreSQL',
+        id: 16,
+        name: 'Laravel',
         link: '#',
-        color: 'text-blue-800'
+        color: 'text-red-500'
     },
     {
-        id: 11,
+        id: 17,
         name: 'MongoDB',
         link: '#',
         color: 'text-green-600'
     },
     {
-        id: 12,
+        id: 18,
+        name: 'PostgreSQL',
+        link: '#',
+        color: 'text-blue-800'
+    },
+    {
+        id: 19,
         name: 'Git',
         link: '#',
         color: 'text-red-600'
     },
     {
-        id: 13,
+        id: 20,
         name: 'GitHub',
         link: '#',
         color: 'text-gray-600'
-    }
+    },
+    {
+        id: 21,
+        name: 'VSCode',
+        link: '#',
+        color: 'text-blue-400'
+    },
+    {
+        id: 22,
+        name: 'Postman',
+        link: '#',
+        color: 'text-orange-400'
+    },
+    {
+        id: 23,
+        name: 'Notion',
+        link: '#',
+        color: 'text-gray-500'
+    },
+    {
+        id: 24,
+        name: 'AI Tools',
+        link: '#',
+        color: 'text-teal-400' // IA Tools (Nuevo)
+    },
 ];
 
 export const contactInfo: ContactInfo[] = [

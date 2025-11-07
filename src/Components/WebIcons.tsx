@@ -1,10 +1,15 @@
-import { FaGithub, FaLinkedin, FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaPython, FaGitAlt, FaTwitter, FaFacebook, FaInstagram, FaWhatsapp, FaPhone, FaArrowRight } from 'react-icons/fa';
-import { SiTypescript, SiDjango, SiMysql, SiMongodb, SiPostgresql, SiTailwindcss } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaPython, FaGitAlt, FaTwitter, FaFacebook, FaInstagram, FaWhatsapp, FaPhone, FaArrowRight, FaBootstrap, FaLaravel, FaJava } from 'react-icons/fa';
+import { SiTypescript, SiDjango, SiMysql, SiMongodb, SiPostgresql, SiTailwindcss, SiPostman, SiExpress, SiNotion } from 'react-icons/si';
 import { FaRegCopy } from "react-icons/fa6";
 import { MdEmail } from 'react-icons/md';
 import { IoMdPin } from 'react-icons/io';
+import { TbBrandAstro } from "react-icons/tb";
+import { RiNextjsFill } from "react-icons/ri";
+import { RiPhpLine } from "react-icons/ri";
+import { VscVscode } from "react-icons/vsc";
+import { BsStars } from "react-icons/bs";
 
-const Icons = [
+export const Icons = [
     {
         name: 'GitHub',
         icon: <FaGithub />
@@ -12,6 +17,34 @@ const Icons = [
     {
         name: 'LinkedIn',
         icon: <FaLinkedin />
+    },
+    {
+        name: 'Twitter',
+        icon: <FaTwitter />
+    },
+    {
+        name: 'Facebook',
+        icon: <FaFacebook />
+    },
+    {
+        name: 'Instagram',
+        icon: <FaInstagram />
+    },
+    {
+        name: 'WhatsApp',
+        icon: <FaWhatsapp />
+    },
+    {
+        name: 'Email',
+        icon: <MdEmail />
+    },
+    {
+        name: 'Phone',
+        icon: <FaPhone />
+    },
+    {
+        name: 'Address',
+        icon: <IoMdPin />
     },
     {
         name: 'HTML',
@@ -42,12 +75,36 @@ const Icons = [
         icon: <FaPython />
     },
     {
-        name: 'Git',
-        icon: <FaGitAlt />
+        name: 'TailwindCSS',
+        icon: <SiTailwindcss />
     },
     {
-        name: 'Django',
-        icon: <SiDjango />
+        name: 'Astro',
+        icon: <TbBrandAstro />
+    },
+    {
+        name: 'Next.js',
+        icon: <RiNextjsFill />
+    },
+    {
+        name: 'Bootstrap',
+        icon: <FaBootstrap />
+    },
+    {
+        name: 'Express',
+        icon: <SiExpress />
+    },
+    {
+        name: 'Laravel',
+        icon: <FaLaravel />
+    },
+    {
+        name: 'PHP',
+        icon: <RiPhpLine />
+    },
+    {
+        name: 'Java',
+        icon: <FaJava />
     },
     {
         name: 'MySQL',
@@ -62,40 +119,32 @@ const Icons = [
         icon: <SiPostgresql />
     },
     {
-        name: 'Twitter',
-        icon: <FaTwitter />
+        name: 'Git',
+        icon: <FaGitAlt />
     },
     {
-        name: 'Facebook',
-        icon: <FaFacebook />
+        name: 'Django',
+        icon: <SiDjango />
     },
     {
-        name: 'Instagram',
-        icon: <FaInstagram />
+        name: 'VSCode',
+        icon: <VscVscode />
     },
     {
-        name: 'WhatsApp',
-        icon: <FaWhatsapp />
+        name: 'Postman',
+        icon: <SiPostman />
+    },
+    {
+        name: 'Notion',
+        icon: <SiNotion />
+    },
+    {
+        name: 'AI Tools',
+        icon: <BsStars />
     },
     {
         name: 'Copy',
         icon: <FaRegCopy />
-    },
-    {
-        name: 'TailwindCSS',
-        icon: <SiTailwindcss />
-    },
-    {
-        name: 'Email',
-        icon: <MdEmail />
-    },
-    {
-        name: 'Phone',
-        icon: <FaPhone />
-    },
-    {
-        name: 'Address',
-        icon: <IoMdPin />
     },
     {
         name: 'ArrowRight',

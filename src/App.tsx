@@ -7,6 +7,7 @@ import ContatMe from "./Pages/ContatMe"
 import Index from "./Pages/Index"
 import Portfolio from "./Pages/Portfolio"
 import SkillsCarousel from "./Components/SkillsCarousel"
+import Work from "./Pages/Work"
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       </Container>
 
       <AboutMe />
+
+      <Work />
 
       <div className="container mx-auto p-2">
         <Portfolio />

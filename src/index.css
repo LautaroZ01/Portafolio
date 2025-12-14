@@ -105,7 +105,7 @@
 }
 
 .subtitle {
-  @apply font-bold bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent my-4;
+  @apply font-bold bg-linear-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent my-4;
 }
 
 .form-contact {

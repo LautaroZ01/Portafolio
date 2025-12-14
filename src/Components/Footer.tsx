@@ -6,7 +6,7 @@ export default function Footer() {
                 Portafolio Web &copy; {' '}
                 <a href="https://www.linkedin.com/in/lautaro-zuleta/" target="_blank" rel="noopener noreferrer" className="text-accent-300 hover:text-accent-400 transition-colors duration-pro">Zuleta, Lautaro Nicolás</a>  {' '}
                 | Todos los derechos reservados
-                </p>
+            </p>
         </footer>
     )
 }

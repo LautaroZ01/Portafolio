@@ -68,11 +68,11 @@ export default function ContactMe() {
             <div className="text-center space-y-6">
                 <AiFillMessage className="size-24 mx-auto text-accent-500" />
                 <h2 className="text-4xl subtitle">Contáctame aquí</h2>
-                <p>¿Tienes alguna pregunta o quieres trabajar junto a mí? ¡No dudes en contactarme!</p>
+                <p>¿Buscas talento para tu equipo o tienes una propuesta laboral? ¡Contáctame Hoy!</p>
             </div>
             <motion.div
                 variants={variant}
-                initial={{ opacity: 0}}
+                initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex flex-col md:flex-row items-center justify-center my-8 gap-4 md:gap-8">

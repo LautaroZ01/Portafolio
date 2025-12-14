@@ -28,7 +28,7 @@ export default function Index() {
         <small className="block">Hola ! 👋🏻,</small>
         <h1 className="text-4xl font-black text-gray-200">
           Soy{" "}
-          <span className="bg-gradient-to-r from-primary-300 to-primary-600 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-primary-300 to-primary-600 bg-clip-text text-transparent">
             Zuleta Lautaro
           </span>
         </h1>
@@ -48,7 +48,7 @@ export default function Index() {
           Saber más
         </a>
         <a
-          href="/CV/CV Lautaro Nicolas Zuleta.pdf"
+          href="/CV/Lautaro Nicolas Zuleta CV Full Stack.pdf"
           target="_blank"
           className="grow btn-primary"
         >

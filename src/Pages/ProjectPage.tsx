@@ -21,7 +21,7 @@ export default function ProjectPage() {
     <main>
       <div className="lg:max-w-4xl mx-auto p-6">
         <small className="bg-primary-800/50 text-primary-200 px-2 py-0.5 rounded-full">{project.type}</small>
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent my-0.5">{project.title}</h1>
+        <h1 className="text-4xl font-bold bg-lineal-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent my-0.5">{project.title}</h1>
         <GalleryCarousel images={project.gallery} />
 
         <h2 className="text-2xl subtitle">Descripción</h2>

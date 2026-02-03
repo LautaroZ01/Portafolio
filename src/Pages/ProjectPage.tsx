@@ -20,10 +20,14 @@ export default function ProjectPage() {
   return (
     <main>
       <div className="lg:max-w-4xl mx-auto p-6">
-        <small className="bg-primary-800/50 text-primary-200 px-2 py-0.5 rounded-full">{project.type}</small>
-        <h1 className="text-4xl font-bold bg-lineal-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent my-0.5">{project.title}</h1>
+        <Link to="/" className="btn-link-arrow group my-4">
+          <FaArrowLeft />
+          Volver al portafolio
+        </Link>
+        <h1 className="text-4xl font-bold bg-linear-to-r from-primary-300 to-primary-600 bg-clip-text text-transparent mb-2">{project.title}</h1>
         <GalleryCarousel images={project.gallery} />
 
+        <small className="bg-primary-800/50 text-primary-200 px-2 py-0.5 rounded-full">{project.type}</small>
         <h2 className="text-2xl subtitle">Descripción</h2>
         <p className="text-gray-400 text-balance mb-10">{project.description}</p>
 
